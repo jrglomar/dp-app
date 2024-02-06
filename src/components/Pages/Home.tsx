@@ -1,18 +1,34 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../UI/Button'
-import Task from '../Navigation/Task'
+import TaskList from '../Tasks/TaskList'
+import { useState } from 'react'
+import NewTask from '../Tasks/NewTask'
 
 export default function Home() {
+
+    const [isNewTaskModal, setIsNewTaskModal] = useState(false)
+
+    function handleOpenNewTaskModal() {
+        setIsNewTaskModal(true);
+    }
+
+    function handleCloseNewTaskModal() {
+        setIsNewTaskModal(false);
+    }
+
     return (
         <div className='container'>
             <section>
                 <div className='flex justify-between'>
                     <h1 className={sectionTitleStyle}>To do list</h1>
-                    <Button className={blueButtonStyle}><FontAwesomeIcon icon={faPlus} /></Button>
+                    <Button className={blueButtonStyle} onClick={handleOpenNewTaskModal}><FontAwesomeIcon icon={faPlus} /></Button>
                 </div>
                 <div>
-                    <Task />
+                    {isNewTaskModal && (
+                        <NewTask onDone={handleCloseNewTaskModal} />
+                    )}
+                    <TaskList />
                 </div>
             </section>
         </div>
