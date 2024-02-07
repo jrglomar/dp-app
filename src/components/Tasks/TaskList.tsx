@@ -1,15 +1,24 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTaskSelector } from "../../store/hooks"
+import Button from "../UI/Button"
 import Task from "./Task"
+import { faPlus } from "@fortawesome/free-solid-svg-icons"
+import { blueButtonStyle, sectionTitleStyle } from "../styles/Styles"
 
+type TaskListProps = {
+    openModal: () => void;
+}
 
-export default function TaskList() {
+export default function TaskList({ openModal }: TaskListProps) {
     const tasks = useTaskSelector((state) => state.task.tasks)
 
     return (
-        <section>
-            <div className="bg-white shadow-md rounded-md overflow-hidden p-5">
-                <h1 className="text-xl font-bold pb-5">List of tasks</h1>
-
+        <section className="m-10">
+            <div className='flex justify-between items-center mb-4'>
+                <h1 className={sectionTitleStyle}>List of task</h1>
+                <Button className={blueButtonStyle} onClick={openModal}><FontAwesomeIcon icon={faPlus} /></Button>
+            </div>
+            <div>
                 <table className="min-w-full">
                     <thead>
                         <tr>

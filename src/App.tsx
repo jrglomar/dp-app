@@ -1,8 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import Root from './components/Pages/Root'
-import Home from './components/Pages/Home';
-import History from './components/Pages/History';
+import Root from './components/Pages/RootPage'
+import Home from './components/Pages/HomePage';
 
 const Router = createBrowserRouter([
   {
@@ -13,10 +12,6 @@ const Router = createBrowserRouter([
         index: true,
         element: <Home />
       },
-      {
-        path: '/history',
-        element: <History />
-      }
     ]
   }
 ])
