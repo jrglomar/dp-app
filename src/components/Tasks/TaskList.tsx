@@ -14,7 +14,7 @@ export default function TaskList() {
                     <thead>
                         <tr>
                             <th className="py-2 px-4 text-left">Task</th>
-                            <th className="py-2 px-4 text-left">Action</th>
+                            <th className="py-2 px-4 text-right">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,6 +24,15 @@ export default function TaskList() {
                             )
                         })}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan={2}>
+                                {tasks.length === 0 && (
+                                    <p className="text-center mt-4">You don't have any task left.</p>
+                                )}
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </section>

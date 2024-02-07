@@ -29,7 +29,8 @@ export default function NewTask({ onDone }: NewTaskProps) {
         const id = uuidv4();
         const newTask: TaskData = {
             id,
-            title: title as string
+            title: title as string,
+            status: 'pending'
         }
 
         console.log(newTask)
