@@ -20,7 +20,7 @@ export default function TaskList() {
                     <tbody>
                         {tasks.map((task) => {
                             return (
-                                <Task {...task} />
+                                <Task key={task.id} {...task} />
                             )
                         })}
                     </tbody>

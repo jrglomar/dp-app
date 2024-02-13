@@ -17,9 +17,9 @@ export default function NewTask({ onDone }: NewTaskProps) {
 
     useEffect(() => {
         if (modal.current) {
-            modal.current.open()
+            modal.current.open();
         }
-    }, [])
+    })
 
     function handleTaskSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();

@@ -22,6 +22,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>(function Modal(
         return {
             open: () => {
                 if (dialog.current) {
+                    dialog.current.removeAttribute('open')
                     dialog.current.showModal()
                 }
             }
