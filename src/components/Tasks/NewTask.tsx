@@ -47,7 +47,7 @@ export default function NewTask({ onDone }: NewTaskProps) {
                         Cancel
                     </Button>
                     <Button type="submit">
-                        Add Expense
+                        Add Task
                     </Button>
                 </p>
             </form>
